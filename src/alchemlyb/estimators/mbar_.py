@@ -4,8 +4,8 @@ import pandas as pd
 from sklearn.base import BaseEstimator
 
 from pymbar import MBAR as MBAR_
-from pymbar.mbar import DEFAULT_SOLVER_PROTOCOL
-from pymbar.mbar import DEFAULT_SUBSAMPLING_PROTOCOL
+#from pymbar.mbar import DEFAULT_SOLVER_PROTOCOL
+#from pymbar.mbar import DEFAULT_SUBSAMPLING_PROTOCOL
 
 
 class MBAR(BaseEstimator):
