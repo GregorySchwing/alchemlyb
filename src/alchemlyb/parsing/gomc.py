@@ -2,7 +2,7 @@
 
 """
 import pandas as pd
-
+import numpy as np
 from .util import anyopen
 
 
@@ -72,7 +72,7 @@ def extract_u_nk(filename, T):
         cols.append(u_col)
 
     u_k = pd.DataFrame(u_k, columns=cols,
-                       index=pd.Float64Index(times.values, name='time'))
+                       index=pd.Index(times.values, name='time',dtype=np.float64))
 
     # Need to modify the lambda name
     cols = [l + "-lambda" for l in lambdas]
@@ -125,7 +125,7 @@ def extract_dHdl(filename, T):
     dHdl *= beta
 
     dHdl = pd.DataFrame(dHdl.values, columns=lambdas,
-                        index=pd.Float64Index(times.values, name='time'))
+                        index=pd.Index(times.values, name='time',dtype=np.float64))
 
     # Need to modify the lambda name
     cols = [l + "-lambda" for l in lambdas]
