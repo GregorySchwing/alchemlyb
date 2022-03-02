@@ -51,8 +51,8 @@ class TI(BaseEstimator):
         # obtain the mean and variance of the mean for each state
         # variance calculation assumes no correlation between points
         # used to calculate mean
-        means = dHdl.mean(level=dHdl.index.names[1:])
-        variances = np.square(dHdl.sem(level=dHdl.index.names[1:]))
+        means = dHdl.groupby(level=dHdl.index.names[1:]).mean()
+        variances = np.square(dHdl.groupby(level=dHdl.index.names[1:]).mean())
         
         # get the lambda names
         l_types = dHdl.index.names[1:]
