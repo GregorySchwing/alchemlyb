@@ -8,7 +8,7 @@ from pymbar.timeseries import (statisticalInefficiency,
 
 
 def _check_multiple_times(df):
-    return df.sort_index(0).reset_index(0).duplicated('time').any()
+    return df.sort_index(axis=0).reset_index(0).duplicated('time').any()
 
 
 def _check_sorted(df):
